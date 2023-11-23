@@ -6,8 +6,8 @@ sequenceDiagram
 
     user-)browser: Writes message in text box and clicks Save
     browser->>+server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    server--)-server: The server saves the new note inside data.json
-
+    server--)server: The server saves the new note inside data.json
+    server-->>browser: Status: 302 Found
     Note over browser, server: The Server start over the process of rendering the notes <br> with the new note added by the User
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
